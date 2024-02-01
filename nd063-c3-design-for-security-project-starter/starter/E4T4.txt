@@ -1,0 +1,22 @@
+
+# What additional architectural change can be made to reduce the internet facing attack surface of the web application instance.
+
+- To reduce the attack surface of the web application instance, we can remove all external access to the instances. And only allow connection to the instances via AWS Systems Manager.
+
+
+
+# Assuming the IAM permissions for the S3 bucket are still insecure, would creating VPC private endpoints for S3 prevent the unauthorized access to the secrets bucket.
+
+- If IAM authorisations are not secure, the use of private VPC endpoints will not guarantee the prevention of unauthorised access to the secrets directory.
+
+
+
+# Will applying default encryption setting to the s3 buckets encrypt the data that already exists?
+
+- No, the application's default encryption does not apply to all existing files. You will need to encrypt all existing files retrospectively before enabling encryption.
+
+
+
+# What would happen if the original cloud formation templates are applied to this environment.
+
+- As some of the changes to address the security risks were made manually, if these cloud formation templates are reapplied, all the security risks that were identified will reappear in the configuration.

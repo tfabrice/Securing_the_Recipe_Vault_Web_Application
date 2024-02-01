@@ -1,0 +1,11 @@
+# Describe GuardDuty findings that were detected related to the brute force attack
+
+In this section the resulting violation after the brute force attack has not been logged in guardduty
+
+- I have enabled password authentication (PasswordAuthentication) for AWS ec2 instances.
+- I have updated the ssh service.
+- I restarted the ssh service in the instance.
+- I checked the region in which the EC 2 instance was running and it was the same.
+- I looked at all the suggestions made but it didn't work.
+
+# Research the AWS Guard Duty documentation page and explain how GuardDuty may have detected this attack - i.e. what was its source of information.

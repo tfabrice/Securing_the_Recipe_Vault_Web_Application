@@ -1,0 +1,51 @@
+# Identify tools that will allow you to do the following:
+
+## Scan infrastructure as code templates
+- Checkov:
+  A comprehensive tool that supports Terraform, CloudFormation, Kubernetes, Helm, Serverless Framework, and more. It has a rich set of features and integrations, such as pre-commit hooks, GitHub actions, VS Code extension, etc. However, it may be slower and more complex than other tools.
+
+### Example vulnerability
+  ─────────────────────┬────────────────────┬────────────────────┬────────────────────┬────────────────────┬────────────────────┐
+	│ Total CVEs: 35     │ critical: 3        │ high: 19           │ medium: 10         │ low: 3             │ skipped: 0         │
+	├────────────────────┴────────────────────┴────────────────────┴────────────────────┴────────────────────┴────────────────────┤
+	│ To fix 34/35 CVEs, go to Prisma Cloud                                                                                       │
+	├────────────────────┼────────────────────┼────────────────────┼────────────────────┼────────────────────┼────────────────────┤
+	│ npm                │ CVE-2019-16775     │ high               │ 3.10.10            │ 6.13.3             │ 6.14.6             │
+	│                    │ CVE-2019-16777     │ low                │                    │ 6.13.4             │                    │
+	│                    │ CVE-2019-16776     │ low                │                    │ 6.13.3             │                    │
+	│                    │ CVE-2020-15095     │ low                │                    │ 6.14.6             │                    │
+
+
+Source: https://www.checkov.io/7.Scan%20Examples/Sca.html
+
+
+
+
+
+
+##Scan AMI’s or containers for OS vulnerabilities
+- Anchore Engine:
+  is an open-source project that provides a centralized service for inspection, analysis, and certification of container images.
+
+### Example vulnerability
+
+Vulnerability   |      ID	          |    Package	Severity	|      Fix	
+CVE-2019-14697	|  musl-1.1.22.r2	  |          High	        |    1.1.22-r3
+
+Source http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-14697
+
+
+
+
+
+
+
+
+
+##Scan an AWS environment for cloud configuration vulnerabilities
+
+- AWS Config:
+  is a fully managed service that provides you with resource inventory, configuration history, and configuration change notifications to use security and governance.
+
+### Example vulnerability
+s3-bucket-policy-not-more-permissive: Checks if your Amazon Simple Storage Service bucket policies do not allow other inter-account permissions than the control Amazon S3 bucket policy that you provide.

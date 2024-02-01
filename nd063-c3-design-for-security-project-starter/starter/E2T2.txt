@@ -1,0 +1,11 @@
+Research and analyze which of the vulnerabilities appear to be related to the code that was deployed for the environment in this project.
+- On the "Web Service Instance - C3" instance, UDP port 20 associated with 'FTP' is accessible from the Internet.
+- On the "Web Service Instance - C3" instance, UDP port 547 associated with 'DHCP' is accessible from the Internet.
+- CIS 4.1 Ensure that no security group authorises the entry of IP address range 0.0.0.0/0 on port 22
+
+
+Bonus - provide recommendations on how to remediate the vulnerabilities.
+- In the first 2 cases mentioned above, given that the security group entry rule currently authorises all traffic on all ports
+It is essential to remove or restrict this rule from the security group and only open the ports required in the security group's incoming access rules.
+
+- Limit the range of IP addresses authorised to access the application server on port 22.

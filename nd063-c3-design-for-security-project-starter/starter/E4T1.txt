@@ -1,0 +1,13 @@
+
+
+# Identify 2-3 changes that can be made to our environment to prevent an ssh brute force attack from the internet.
+
+- Set up IP address whitelists to restrict SSH access to certain trusted IP addresses by configuring whitelists.
+- Because the application server uses an authentication process based on a public and private key. It is recommended to use the Session Manager service of AWS Systems Manager to access the application server.
+- Regularly monitor SSH authentication logs to detect any suspicious activity and act accordingly.
+- Change the default port 22 on which SSH listens. This will make it more difficult for attackers to find your SSH service.
+
+# Neither instance should have had access to the secret recipes bucket, in the even that instance API credentials were compromised how could we have prevented access to sensitive data.
+- Enable server side encryption in the S3 bucket.
+- As seen in the course, use the least privileged access model by introducing a role policy limiting access to the S3 Secret Repice bucket from the application server and authorising only the S3 Free Recipes bucket.
+- Define an instance role policy that limits the actions (such as deleting, modifying or updating) that can be performed on S3 buckets to what is strictly necessary. Because most of the time only read authorisation is required to obtain the recipe from the S3 bucket.
